@@ -33,26 +33,16 @@ class Auto:
         return self.cantidadCreados
 
     def verificarIntegridad(self):
-        cIguales = 0
-        cTotales= 0
-        if (self.registro != self.motor.registro):
-            print("Las piezas no son originales")
-        else:
-            for i in self.asientos:
-                if (i is None):
-                    pass
-                else:
-                    cTotales+=1
-                    if (self.registro == i.registro):
-                        cIguales+=1
-                    else:
-                        pass                  
-            if(cIguales==cTotales):
-                print("Auto original")
-            else:
-                print("Las piezas no son originales") 
+        mensaje = "Auto original"
+        if self.registro != self.motor.registro:
+            mensaje = "Las piezas no son originales"
         
+        asientos = list(filter(lambda x: isinstance(x, Asiento) and x.registro != self.registro, self.asientos))
 
+        if asientos:
+            mensaje = "Las piezas no son originales"
+        
+        return mensaje
 
 class Motor:
     def __init__(self, numeroCilindros, tipo, registro):

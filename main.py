@@ -68,14 +68,3 @@ class Motor:
             self.tipo = nmotor
         else:
             pass         
-
-if __name__ == "__main__":       
-    a1 = Auto("model 3", 33000, [Asiento("blanco", 5000, 32),None, None, Asiento("blanco", 5000, 32), None],
-          "tesla", Motor(4, "electrico", 32), 32)
-    a2 = Auto("model 3", 33000, [Asiento("blanco", 5000, 40),None, None, Asiento("blanco", 5000, 32), None],
-          "tesla", Motor(4, "electrico", 32), 32)
-    a3 = Auto("model 3", 33000, [Asiento("blanco", 5000, 32),None, None, Asiento("blanco", 5000, 32), None],
-          "tesla", Motor(4, "electrico", 58), 32)
-    a1.verificarIntegridad()
-    a2.verificarIntegridad()  
-    a3.verificarIntegridad()    
